@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Loops</h2>
+
+<p>The for/in statement loops through the properties of an object(object within a objcet).</p>
+
+<p id="demo"></p>
+
+<script>
+var txt = "";
+var person = {
+	fname:"John", 
+	lname:"Doe", 
+	age:25,
+	obj:[
+	{
+		name:"asma",
+		lname:"asia",
+		age:"26"
+	},{
+		fristname:"naseer",
+		lname:"aman",
+		age:"28"
+	}],
+	obj2:{name:"aman",lname:"khan",age:22},
+	arr:["asha","ammu","nisha"]
+}; 
+var x;
+for(x in person){
+
+	if (typeof(person[x])=="object" || typeof(person[x])=="array") {
+		if (Array.isArray(person[x])){
+				for(var i=0; i<person[x].length; i++){
+						if(typeof(person[x][i])=="object"){
+						   for(var y in person[x][i]){
+						   	  txt += y +"---->"+ person[x][i][y] + " <br>"
+						   }
+						}else{
+							txt +=person[x][i]+ " <br>";	
+						}
+						
+				}
+
+         }else {
+			for(var key in person[x]){
+				txt += key + "<---->" + person[x][key] + "<br>";
+
+			}
+		}
+	}else{
+		txt += x + "---->" + person[x] + "<br>";
+	}
+}
+document.getElementById("demo").innerHTML = txt;
+</script>
+
+</body>
+</html>
