@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Text Input</h2>
+
+<form action = "/action_page.php" target ="_self" onsubmit="return validateForm()" method="post" >
+	<p><big>action</big> atribute defines when a action to be  performed when the from is submitted</p>
+	<p>The <big>target</big> attribute specifies if the submitted result will open in a new browser tab, a frame, or in the current window. 
+		<big>"_self"----> opens at current window and "_blank"----> open in a new brower tab</big></p>
+		<p>The method attribute specifies the HTTP method (GET or POST) to be used when submitting the form data:<br>
+			"GET"---->is used, the submitted form data will be visible in the page address field:<br>
+			"post"--->Always use POST if the form data contains sensitive or personal information.<br> The POST method does not display the submitted form data in the page address field.
+
+</p>
+<fieldset>
+	<legend>my personal form</legend>
+  First name:<br>
+  <input type="text" name="firstname">
+  <br>
+  radio button:<br>
+ <input type="radio" name="gender" value="male" > Male<br>
+  <input type="reset"><br><br>
+ <input type="checkbox" name="vehicle1" value="Bike"> I have a bike<br>
+  <input type="checkbox" name="vehicle2" value="Car"> I have a car <br><br>
+  <input type="color" name="favcolor" value="#ff0000"><br><br>
+  <input type="date" name="bday"><br>
+    Enter a date before 1980-01-01:
+  <input type="date" name="bday" max="1979-12-31"><br>
+  Enter a date after 2000-01-01:
+  <input type="date" name="bday" min="2000-01-02"><br>
+
+email id:
+<input type="email" name="email"><br>
+password:
+<input type="password" name="psw"><br><br>
+Quantity (between 1 and 5):
+  <input type="number" name="quantity" min="1" max="5"><br></input><br>
+
+    Search Google:
+  <input type="search" name="googlesearch">
+  <input type="submit"><br><br>
+
+    Telephone:
+  <input type="tel" name="usrtel"><br><br>
+
+
+  time:
+   <input type="time" name="usr_time">
+  <input type="submit"><br><br>
+
+
+<p>The multiple attribute specifies that the user is allowed to enter more than one value in the input element.</p><br>
+Select images: <input type="file" name="img" multiple >
+  <input type="submit">
+  <br><br>
+  <p>The placeholder attribute specifies a hint that describes the expected value of an input field (a sample value or a short description of the format).</p>
+    <input type="text" name="fname" placeholder="First name"><br>
+  <input type="text" name="lname" placeholder="Last name"><br>
+  <input type="submit" value="Submit"><br>
+
+ <p>The select element defines a drop-down list:</p>
+ <p>Use the size attribute to specify the number of visible values:</p>
+ <p>Use the multiple attribute to allow the user to select more than one value.</p>
+ <select name="cars" size="4" multiple>
+ 	<option value="BMW">BWM</option>
+ 	<option value="valvo">valvo</option>
+ 	<option value="asma">asma</option>
+ 	<option value="farari">farari</option>	
+ </select> <br><br><br>
+<textarea name="message" rows="10" cols="30">
+	my self asma
+</textarea><br>
+ submit button:<br>
+  <input type="submit" value="Submit">
+  </fieldset><br>
+  <p>The button element defines a clickable button:</p>
+  <button type="button" onclick="alert('hello wolrd')">click me</button><br><br>
+ 
+  <h2>The datalist Element added to html5</h2>
+<p>The datalist element specifies a list of pre-defined options for an input element.</p>
+<p>The list attribute of the "input" element, must refer to the "id" attribute of the "datalist" element</p>
+<input list="browser" name="browser">
+<datalist id="browser">
+	<option value="asma">
+		<option value="naseer">
+			<option value="annu">
+				<option value="shakku">
+				
+
+</datalist><br><br>
+<input type="submit" ><br><br>
+
+<script>
+function validateForm() {
+    var x = document.forms["myForm"]["fname"].value;
+    if (x == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+}
+</script>
+
+<input type="text" name="fname"><br><br>
+
+<input id="id1" type="number" min="100" max="300">
+<button onclick="checkvailidity">ok</button>
+
+<script >
+	function checkvailidity() {
+		var text;
+		var x = document.getElementByid('id1').value;
+
+		if(!x.checkVailidity())
+		{
+			text = "number is out of range"
+		}else { 
+
+			if(!x.checkVailidity())
+		{
+			text = "number is less the range"
+
+
+			}else{
+					text = "input ok"
+
+				}
+	}
+}
+</script>
+
+</form>
+
+
+
+</body>
+</html>
